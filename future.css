@@ -1,0 +1,117 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    color: aliceblue;
+    background-color: #f4eae6;
+}
+/* Nav bar */
+nav {
+    font-family: "Josefin Sans", sans-serif;
+    /* รอเปลี่ยนสี */
+    background-color: #4297a0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 1s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px #000000;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: default;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    position: relative;
+    margin: 0 10px;
+    padding: 0 2px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #f4eae6;
+    
+}
+
+nav ul li a:hover{
+    /* รอเปลี่ยนสี */
+    color: #000000;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Header */
+header {
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    padding-top: 3rem;
+    padding-bottom: 1rem
+}
+/* section info */
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,400px);
+    justify-content: center;
+    padding: 1rem 5rem;
+    gap: 1.5rem;
+}
+
+.card {
+    height: 500px;
+    background-color: hsla(21, 41%, 83%, 0.816);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.picture img {
+   width: 350px;
+   height: 350px;
+   object-fit: cover;
+}
+
+.name {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 20px;
+    font-family: "Mali", cursive;
+    color: #1f3d4d;
+}
+.text1 {
+    position: absolute;
+    padding: 2rem;
+    line-height: 1.6;
+    opacity: 0; /* ข้อความ "text1" เริ่มต้นแสดง */
+    transition: opacity 0.5s ease; /* ให้มีการเปลี่ยนแปลงของ opacity เมื่อคลิก */
+    font-family: "Mali", cursive;
+}
+.card.clicked .picture img ,.card.clicked .name{
+    opacity: 0; /* ทำให้รูปหาย */
+}
+.card.clicked .text1 {
+    opacity: 1; /* ทำให้ข้อความใน "text1" ปรากฏ */
+}
